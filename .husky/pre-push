@@ -8,5 +8,6 @@ git fetch origin "$branch"
 if git diff --quiet HEAD origin/"$branch"; then
   echo "No changes detected. Skipping build."
 else
+  git pull origin "$branch"
   pnpm run build
 fi
